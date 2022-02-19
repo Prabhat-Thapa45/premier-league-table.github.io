@@ -1,11 +1,7 @@
 
 div.elements{
-    position: absolute;
     background-color: aliceblue;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -26%) 
+    
 }
 .data td{
     padding-left: 5px;
@@ -18,9 +14,11 @@ div.elements{
 }
 
 body{
+    position: absolute;
     background-color:#ffffff;
-    align-items: center;
     display:inline;
+    left: 50%;
+    transform: translate(-50%, 0%) 
     
 }
 .head td{

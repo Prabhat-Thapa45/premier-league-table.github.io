@@ -44,5 +44,3 @@ class Bundesliga(Resource):
         """
         headers = {'Content-Type': 'text/html'}
         return original_flask_make_response(render_template("football.html", data=serialize('Bundesliga'), league="Bundesliga Table"), 200, headers)
-        
-
