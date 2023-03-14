@@ -24,7 +24,7 @@ class Premier(Resource):
         """a dataframe is returned
         """
         headers = {'Content-Type': 'text/html'}
-        return original_flask_make_response(render_template("football.html", data=serialize("Premier"), league="Premier Leage Table"), 200, headers)
+        return original_flask_make_response(render_template("index.html", data=serialize("Premier"), league="Premier Leage Table"), 200, headers)
         
 class Laliga(Resource):
     """returns table of premire leage
@@ -33,7 +33,7 @@ class Laliga(Resource):
         """a dataframe is returned
         """
         headers = {'Content-Type': 'text/html'}
-        return original_flask_make_response(render_template("football.html", data=serialize('Laliga'), league="Laliga Table"), 200, headers)
+        return original_flask_make_response(render_template("index.html", data=serialize('Laliga'), league="Laliga Table"), 200, headers)
 
 
 class Bundesliga(Resource):
@@ -43,4 +43,4 @@ class Bundesliga(Resource):
         """a dataframe is returned
         """
         headers = {'Content-Type': 'text/html'}
-        return original_flask_make_response(render_template("football.html", data=serialize('Bundesliga'), league="Bundesliga Table"), 200, headers)
+        return original_flask_make_response(render_template("index.html", data=serialize('Bundesliga'), league="Bundesliga Table"), 200, headers)
