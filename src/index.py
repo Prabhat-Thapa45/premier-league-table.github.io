@@ -7,13 +7,12 @@ from flask import render_template
 from flask_restful import Resource, original_flask_make_response
 
 
-
 def serialize(league):
     link = {'Premier': "https://www.theguardian.com/football/premierleague/table", 
     "Laliga": "https://www.theguardian.com/football/laligafootball/table",
     "Bundesliga": "https://www.theguardian.com/football/bundesligafootball/table"
     }
-    df = pd.read_html(link[league])[0].drop("Form", axis=1)
+    df = pd.read_html(link[league], flavor="html5lib")[0].drop("Form", axis=1)
     return np.array(df).tolist()
 
 
@@ -25,7 +24,8 @@ class Premier(Resource):
         """
         headers = {'Content-Type': 'text/html'}
         return original_flask_make_response(render_template("index.html", data=serialize("Premier"), league="Premier Leage Table"), 200, headers)
-        
+
+
 class Laliga(Resource):
     """returns table of premire leage
     """
